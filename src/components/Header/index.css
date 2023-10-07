@@ -1,8 +1,14 @@
 .nav-header {
   display: flex;
   justify-content: space-around;
+  background-color: red;
+  height: 65px;
 }
 
+.icon-image {
+  height: 45px;
+  width: 45px;
+}
 @media screen and (max-width: 767px) {
   .nav-header {
     flex-direction: column;
@@ -98,13 +104,12 @@
 }
 
 .nav-menu-item {
-  font-family: 'Roboto';
-  margin: 10px;
   font-weight: 400;
-  font-size: 16px;
-  color: #475569;
+  font-size: 1px;
 }
-
+.bell {
+  padding-top: 15px;
+}
 .nav-menu-item-mobile {
   margin: 0px;
   cursor: pointer;

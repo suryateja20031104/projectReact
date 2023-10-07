@@ -1,5 +1,5 @@
 import Header from '../Header'
-
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 
 const Home = () => (
@@ -7,28 +7,34 @@ const Home = () => (
     <Header />
     <div className="home-container">
       <div className="home-content">
-        <h1 className="home-heading">Clothes That Get YOU Noticed</h1>
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-img.png"
-          alt="clothes that get you noticed"
-          className="home-mobile-img"
-        />
-        <p className="home-description">
-          Fashion is part of the daily air and it does not quite help that it
-          changes all the time. Clothes have always been a marker of the era and
-          we are in a revolution. Your fashion makes you been seen and heard
-          that way you are. So, celebrate the seasons new and exciting fashion
-          in your own way.
+        <h1 className="home-heading">Welcome Back !</h1>
+        <p className="home-description mt-5">
+          Find KYC records across the cross-institutional network.
         </p>
-        <button type="button" className="shop-now-button">
-          Shop Now
-        </button>
+        <div className="d-flex flex-row">
+          <input type="text" className="mt-5 text-box" />
+          <select className="mt-5 sel-box">
+            <option value="Passport">Passport</option>
+            <option value="Driving License">Driving License</option>
+            <option value="National ID">National ID</option>
+            <option value="Birth Certificate">Birth Certificate</option>
+            <option value="National Health ID">National Health ID</option>
+            <option value="Others">Others</option>
+          </select>
+          <button type="button" className="tog-btn mt-5">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="25"
+              height="25"
+              fill="currentColor"
+              className="bi bi-search"
+              viewBox="0 0 16 16"
+            >
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+          </button>
+        </div>
       </div>
-      <img
-        src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-img.png"
-        alt="clothes that get you noticed"
-        className="home-desktop-img"
-      />
     </div>
   </>
 )

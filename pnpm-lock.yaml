@@ -4,6 +4,7 @@ specifiers:
   '@testing-library/jest-dom': 5.11.9
   '@testing-library/react': 11.2.5
   '@testing-library/user-event': 12.6.2
+  bootstrap: 5.3.2
   chalk: 4.1.0
   eslint-config-airbnb: 18.2.1
   eslint-config-prettier: 8.1.0
@@ -15,7 +16,9 @@ specifiers:
   npm-run-all: 4.1.5
   prettier: 2.2.1
   react: 17.0.1
+  react-bell-icon: 1.0.1
   react-dom: 17.0.1
+  react-icons: 4.11.0
   react-router-dom: 5.2.0
   react-scripts: 4.0.3
 
@@ -23,11 +26,14 @@ dependencies:
   '@testing-library/jest-dom': 5.11.9
   '@testing-library/react': 11.2.5_react-dom@17.0.1+react@17.0.1
   '@testing-library/user-event': 12.6.2
+  bootstrap: 5.3.2
   chalk: 4.1.0
   history: 5.0.0
   msw: 0.28.1
   react: 17.0.1
+  react-bell-icon: 1.0.1_react-dom@17.0.1+react@17.0.1
   react-dom: 17.0.1_react@17.0.1
+  react-icons: 4.11.0_react@17.0.1
   react-router-dom: 5.2.0_react@17.0.1
 
 devDependencies:
@@ -4506,6 +4512,12 @@ packages:
   /boolbase/1.0.0:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
     dev: true
+
+  /bootstrap/5.3.2:
+    resolution: {integrity: sha512-D32nmNWiQHo94BKHLmOrdjlL05q1c8oxbtBphQFb9Z5to6eGRDCm0QgeaZ4zFBHzfg2++rqa2JkqCcxDy0sH0g==}
+    peerDependencies:
+      '@popperjs/core': ^2.11.8
+    dev: false
 
   /brace-expansion/1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
@@ -11280,6 +11292,16 @@ packages:
       whatwg-fetch: 3.6.19
     dev: true
 
+  /react-bell-icon/1.0.1_react-dom@17.0.1+react@17.0.1:
+    resolution: {integrity: sha512-WxePTEk46XYn1vUnTumLb2RSamdcialERyb2Euk4lrXfEQ59vOkpQaE+Uj6FWXTfAqD+f438XdWfFYccqlmDLg==}
+    peerDependencies:
+      react: ^16.8.0
+      react-dom: ^16.8.0
+    dependencies:
+      react: 17.0.1
+      react-dom: 17.0.1_react@17.0.1
+    dev: false
+
   /react-dev-utils/11.0.4:
     resolution: {integrity: sha512-dx0LvIGHcOPtKbeiSUM4jqpBl3TcY7CDjZdfOIcKeznE7BWr9dg0iPG90G5yfVQ+p/rGNMXdbfStvzQZEVEi4A==}
     engines: {node: '>=10'}
@@ -11324,6 +11346,14 @@ packages:
   /react-error-overlay/6.0.11:
     resolution: {integrity: sha512-/6UZ2qgEyH2aqzYZgQPxEnz33NJ2gNsnHA2o5+o4wW9bLM/JYQitNP9xPhsXwC08hMMovfGe/8retsdDsczPRg==}
     dev: true
+
+  /react-icons/4.11.0_react@17.0.1:
+    resolution: {integrity: sha512-V+4khzYcE5EBk/BvcuYRq6V/osf11ODUM2J8hg2FDSswRrGvqiYUYPRy4OdrWaQOBj4NcpJfmHZLNaD+VH0TyA==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 17.0.1
+    dev: false
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
