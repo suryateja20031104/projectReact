@@ -78,7 +78,7 @@
 }
 
 .text-box {
-  width: 170%;
+  width: 300%;
   height: 35px;
   border-radius: 5px 0px 0px 5px;
   border-width: 1px;
@@ -86,7 +86,7 @@
 
 .sel-box {
   background-color: rgb(245, 182, 213);
-  width: 125%;
+  width: 175%;
   height: 35px;
   font-size: large;
   text-align: center;
@@ -96,4 +96,32 @@
   height: 35px;
   width: 50%;
   border-width: 0px;
+}
+.contain1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: lightblue;
+  width: 20%;
+  height: 165px;
+  margin-right: 120px;
+  border-radius: 8px;
+}
+.contain2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.contain {
+  display: flex;
+  justify-content: center;
+}
+.check {
+  border-radius: 40px;
+  border-color: black;
+  border-width: 8px;
+}
+.context {
+  text-decoration: underline;
+  color: blue;
 }

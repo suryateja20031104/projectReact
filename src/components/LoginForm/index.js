@@ -201,14 +201,11 @@ class LoginForm extends Component {
 
   render() {
     const {
-      username1,
-      password1,
       showSubmitError,
       errorMsg,
       isregister,
       showSubmitRegister,
     } = this.state
-    console.log(username1, password1)
     return (
       <div className="login-form-container">
         {isregister && (
