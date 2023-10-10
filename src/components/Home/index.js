@@ -8,6 +8,8 @@ class Home extends Component {
   state = {
     inputtext: '',
     selectext: 'passport',
+    searchcomp: 0,
+    searchproc: 0,
   }
 
   onChangeInput = event => {
@@ -18,12 +20,29 @@ class Home extends Component {
     this.setState({selectext: event.target.value})
   }
 
-  onChangeButton = () => {
+  onChangeButton = async () => {
     const {inputtext, selectext} = this.state
-    console.log(inputtext, selectext)
+    const url =
+      'https://projectdatabase1.onrender.com/searchquery/?inputtext=' +
+      `${inputtext}` +
+      '&selectext=' +
+      `${selectext}`
+    const options = {
+      method: 'GET',
+    }
+    const response = await fetch(url, options)
+    await response.text()
+    const url1 = 'https://projectdatabase1.onrender.com/getCountSearch'
+    const response1 = await fetch(url1, options)
+    const data2 = await response1.json()
+    this.setState({
+      searchproc: data2.searchResponse,
+      searchcomp: data2.searchComplete,
+    })
   }
 
   render() {
+    const {searchcomp, searchproc} = this.state
     return (
       <div>
         <Header />
@@ -82,7 +101,7 @@ class Home extends Component {
             </svg>
             <div className="contain2">
               <div>
-                <h1>2</h1>
+                <h1>{searchproc}</h1>
                 <p className="context">search in progress</p>
               </div>
             </div>
@@ -101,8 +120,8 @@ class Home extends Component {
             </svg>
             <div className="contain2">
               <div>
-                <h1>2</h1>
-                <p className="context">search in progress</p>
+                <h1>{searchcomp}</h1>
+                <p className="context">search completed</p>
               </div>
             </div>
           </div>

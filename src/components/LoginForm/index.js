@@ -81,7 +81,6 @@ class LoginForm extends Component {
   submitForm = async event => {
     event.preventDefault()
     const {username, password} = this.state
-    // const userDetails = {username, password}
     const url =
       'https://projectdatabase1.onrender.com/userConformation/?username=' +
       `${username}` +
