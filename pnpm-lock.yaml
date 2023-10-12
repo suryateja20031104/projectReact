@@ -21,6 +21,7 @@ specifiers:
   react-icons: 4.11.0
   react-router-dom: 5.2.0
   react-scripts: 4.0.3
+  unicons: 0.0.3
 
 dependencies:
   '@testing-library/jest-dom': 5.11.9
@@ -35,6 +36,7 @@ dependencies:
   react-dom: 17.0.1_react@17.0.1
   react-icons: 4.11.0_react@17.0.1
   react-router-dom: 5.2.0_react@17.0.1
+  unicons: 0.0.3
 
 devDependencies:
   eslint-config-airbnb: 18.2.1
@@ -13227,6 +13229,10 @@ packages:
     resolution: {integrity: sha512-6t3foTQI9qne+OZoVQB/8x8rk2k1eVy1gRXhV3oFQ5T6R1dqQ1xtin3XqSlx3+ATBkliTaR/hHyJBm+LVPNM8w==}
     engines: {node: '>=4'}
     dev: true
+
+  /unicons/0.0.3:
+    resolution: {integrity: sha512-7T/5O5OUR76IKVpiJn2/4qDoDPuCA67QUp3/Wg5e/yhBrE86cApI01SLbziPMv1lQ0I/TJ54HSD8wbHj7WNciw==}
+    dev: false
 
   /union-value/1.0.1:
     resolution: {integrity: sha512-tJfXmxMeWYnczCVs7XAEvIV7ieppALdyepWMkHkwciRpZraG/xwT+s2JN8+pr1+8jCRf80FFzvr+MpQeeoF4Xg==}

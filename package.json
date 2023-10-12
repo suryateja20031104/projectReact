@@ -18,7 +18,8 @@
     "react-bell-icon": "1.0.1",
     "react-dom": "17.0.1",
     "react-icons": "4.11.0",
-    "react-router-dom": "5.2.0"
+    "react-router-dom": "5.2.0",
+    "unicons": "0.0.3"
   },
   "devDependencies": {
     "eslint-config-airbnb": "18.2.1",
