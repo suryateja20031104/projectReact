@@ -1,0 +1,11 @@
+.container {
+  border-color: black;
+  border-width: 3px;
+  border-style: solid;
+  background-color: lightblue;
+}
+.inner-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

@@ -4,12 +4,37 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 
 class ProcessPage extends Component {
+  state = {referenceId: 0}
+
+  onReference = async () => {
+    const options = {
+      method: 'GET',
+    }
+    const url1 = 'https://projectdatabase1.onrender.com/getCountSearch'
+    const response1 = await fetch(url1, options)
+    const data2 = await response1.json()
+    this.setState({
+      referenceId: data2.searchResponse,
+    })
+  }
+
   render() {
+    const {referenceId} = this.state
+
     return (
       <div>
         <Header />
         <p className="head_1 text-center mt-5">Searching...</p>
-        <p className="text-ref text-center">Reference:{1}</p>
+        <p className="text-ref text-center">
+          Reference:
+          <button
+            onClick={this.onReference}
+            type="button"
+            className="reference-button"
+          >
+            {referenceId}
+          </button>
+        </p>
         <div className="main">
           <p className="head_2">
             You can close the window.We will notify when the search is finished

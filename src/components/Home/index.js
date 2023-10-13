@@ -20,6 +20,19 @@ class Home extends Component {
     this.setState({selectext: event.target.value})
   }
 
+  onChangePage = async () => {
+    const options = {
+      method: 'GET',
+    }
+    const url1 = 'https://projectdatabase1.onrender.com/getCountSearch'
+    const response1 = await fetch(url1, options)
+    const data2 = await response1.json()
+    this.setState({
+      searchproc: data2.searchResponse,
+      searchcomp: data2.searchComplete,
+    })
+  }
+
   onChangeButton = async () => {
     const {inputtext, selectext} = this.state
     const url =
@@ -32,13 +45,8 @@ class Home extends Component {
     }
     const response = await fetch(url, options)
     await response.text()
-    const url1 = 'https://projectdatabase1.onrender.com/getCountSearch'
-    const response1 = await fetch(url1, options)
-    const data2 = await response1.json()
-    this.setState({
-      searchproc: data2.searchResponse,
-      searchcomp: data2.searchComplete,
-    })
+    const {history} = this.props
+    history.push('/processPage')
   }
 
   render() {
@@ -102,7 +110,13 @@ class Home extends Component {
             <div className="contain2">
               <div>
                 <h1>{searchproc}</h1>
-                <p className="context">search in progress</p>
+                <button
+                  className="context"
+                  type="button"
+                  onClick={this.onChangePage}
+                >
+                  search in progress
+                </button>
               </div>
             </div>
           </div>
@@ -121,7 +135,15 @@ class Home extends Component {
             <div className="contain2">
               <div>
                 <h1>{searchcomp}</h1>
-                <p className="context">search completed</p>
+                <p>
+                  <button
+                    type="button"
+                    onClick={this.onChangePage}
+                    className="reference-button"
+                  >
+                    search completed
+                  </button>
+                </p>
               </div>
             </div>
           </div>

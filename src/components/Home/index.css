@@ -96,6 +96,8 @@
   height: 35px;
   width: 50%;
   border-width: 0px;
+  background-color: rgb(245, 182, 213);
+  border-color: rgb(245, 182, 213);
 }
 .contain1 {
   display: flex;
@@ -124,4 +126,12 @@
 .context {
   text-decoration: underline;
   color: blue;
+}
+.reference-button {
+  background-color: rgb(245, 182, 213);
+  border-color: rgb(245, 182, 213);
+  border-width: 0px;
+  text-decoration: underline;
+  color: blue;
+  font-weight: bold;
 }
