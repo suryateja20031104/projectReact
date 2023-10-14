@@ -3,9 +3,55 @@
   border-width: 3px;
   border-style: solid;
   background-color: lightblue;
+  height: 550px;
 }
 .inner-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.chatcontainer {
+  background-color: lightblue;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+}
+.chatbox {
+  background-color: white;
+  width: 35%;
+  margin: 10px;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+}
+.chatid {
+  background-color: lightpink;
+  height: 50px;
+  text-align: center;
+  padding-top: 15px;
+}
+.chatinner {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.bot {
+  width: 85%;
+  height: 45px;
+  border-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+}
+.bot2 {
+  width: 85%;
+  height: 45px;
+  border-radius: 5px;
+  border-bottom-right-radius: 0px;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
 }
