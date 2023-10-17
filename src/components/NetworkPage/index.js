@@ -4,7 +4,63 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 
 class NetworkPage extends Component {
+  state = {
+    searchPram: '',
+    searchVal: '',
+    bot1Resp: '',
+    // bot1Ask: '',
+    bot2Resp: '',
+    // bot2Ask: '',
+    bot3Resp: '',
+    // bot3Ask: '',
+  }
+
+  onChat = async () => {
+    const options = {
+      method: 'GET',
+    }
+    const url = 'https://projectdatabase1.onrender.com/getDet'
+    const response = await fetch(url, options)
+    const data = await response.json()
+    console.log(data)
+    this.setState({
+      searchPram: data.searchPram,
+      searchVal: data.searchValue,
+    })
+
+    const url1 = 'https://projectdatabase1.onrender.com/bot1'
+    const response1 = await fetch(url1, options)
+    const data1 = await response1.json()
+    if (data1.length === 0) {
+      this.setState({bot1Resp: 'No'})
+    } else {
+      this.setState({bot1Resp: 'Yes'})
+    }
+
+    const url2 = 'https://projectdatabase1.onrender.com/bot2'
+    const response2 = await fetch(url2, options)
+    const data2 = await response2.json()
+    console.log(data2)
+    if (data2.length === 0) {
+      this.setState({bot2Resp: 'No'})
+    } else {
+      this.setState({bot2Resp: 'Yes'})
+    }
+
+    const url3 = 'https://projectdatabase1.onrender.com/bot3'
+    const response3 = await fetch(url3, options)
+    const data3 = await response3.json()
+    console.log(data3)
+    if (data3.length === 0) {
+      this.setState({bot3Resp: 'No'})
+    } else {
+      this.setState({bot3Resp: 'Yes'})
+    }
+  }
+
   render() {
+    const {searchPram, searchVal, bot1Resp, bot2Resp, bot3Resp} = this.state
+
     return (
       <div>
         <Header />
@@ -13,16 +69,18 @@ class NetworkPage extends Component {
             <div className="inner-container">
               <p>status:completed</p>
               <h1 className="">Network Broadcast</h1>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="50"
-                height="50"
-                fill="currentColor"
-                className="bi bi-backspace-fill m-3"
-                viewBox="0 0 16 16"
-              >
-                <path d="M15.683 3a2 2 0 0 0-2-2h-7.08a2 2 0 0 0-1.519.698L.241 7.35a1 1 0 0 0 0 1.302l4.843 5.65A2 2 0 0 0 6.603 15h7.08a2 2 0 0 0 2-2V3zM5.829 5.854a.5.5 0 1 1 .707-.708l2.147 2.147 2.146-2.147a.5.5 0 1 1 .707.708L9.39 8l2.146 2.146a.5.5 0 0 1-.707.708L8.683 8.707l-2.147 2.147a.5.5 0 0 1-.707-.708L7.976 8 5.829 5.854z" />
-              </svg>
+              <button type="button" onClick={this.onChat}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="50"
+                  height="50"
+                  fill="currentColor"
+                  className="bi bi-backspace-fill m-3"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M15.683 3a2 2 0 0 0-2-2h-7.08a2 2 0 0 0-1.519.698L.241 7.35a1 1 0 0 0 0 1.302l4.843 5.65A2 2 0 0 0 6.603 15h7.08a2 2 0 0 0 2-2V3zM5.829 5.854a.5.5 0 1 1 .707-.708l2.147 2.147 2.146-2.147a.5.5 0 1 1 .707.708L9.39 8l2.146 2.146a.5.5 0 0 1-.707.708L8.683 8.707l-2.147 2.147a.5.5 0 0 1-.707-.708L7.976 8 5.829 5.854z" />
+                </svg>
+              </button>
             </div>
             <div className="chatcontainer">
               <div className="chatbox shadow-lg">
@@ -40,12 +98,16 @@ class NetworkPage extends Component {
                     <path d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z" />
                   </svg>
                   <div className="bot">
-                    <p>hai this is bot 1</p>
+                    <p>
+                      {searchPram} | {searchVal} | Yes/No ?
+                    </p>
                   </div>
                 </div>
                 <div className="chatinner">
                   <div className="bot2">
-                    <p>hai this is bot 1</p>
+                    <p>
+                      {searchPram} | {searchVal} | {bot1Resp}
+                    </p>
                   </div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -72,12 +134,16 @@ class NetworkPage extends Component {
                     <path d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z" />
                   </svg>
                   <div className="bot">
-                    <p>hai this is bot 1</p>
+                    <p>
+                      {searchPram} | {searchVal} | Yes/No ?
+                    </p>
                   </div>
                 </div>
                 <div className="chatinner">
                   <div className="bot2">
-                    <p>hai this is bot 1</p>
+                    <p>
+                      {searchPram} | {searchVal} | {bot2Resp}
+                    </p>
                   </div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -107,12 +173,16 @@ class NetworkPage extends Component {
                     <path d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z" />
                   </svg>
                   <div className="bot">
-                    <p>hai this is bot 1</p>
+                    <p>
+                      {searchPram} | {searchVal} | Yes/No
+                    </p>
                   </div>
                 </div>
                 <div className="chatinner">
                   <div className="bot2">
-                    <p>hai this is bot 1</p>
+                    <p>
+                      {searchPram} | {searchVal} | {bot3Resp}
+                    </p>
                   </div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -139,12 +209,12 @@ class NetworkPage extends Component {
                     <path d="M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2V1.866ZM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5Z" />
                   </svg>
                   <div className="bot">
-                    <p>hai this is bot 1</p>
+                    <p>Terminated {searchPram}</p>
                   </div>
                 </div>
                 <div className="chatinner">
                   <div className="bot2">
-                    <p>hai this is bot 1</p>
+                    <p>Acknowledged</p>
                   </div>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
