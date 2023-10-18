@@ -56,6 +56,18 @@ class NetworkPage extends Component {
     } else {
       this.setState({bot3Resp: 'Yes'})
     }
+
+    const {searchPram, searchVal, bot1Resp, bot2Resp, bot3Resp} = this.state
+    console.log(searchPram, searchVal, bot1Resp)
+    const url4 =
+      'https://projectdatabase1.onrender.com/storePvtchat/?chatlog=' +
+      `${searchPram}` +
+      `${searchVal}` +
+      `${bot1Resp}` +
+      `${bot2Resp}` +
+      `${bot3Resp}`
+    const response4 = await fetch(url4, options)
+    await response4.json()
   }
 
   render() {

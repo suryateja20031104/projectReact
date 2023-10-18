@@ -45,6 +45,11 @@ class Home extends Component {
     }
     const response = await fetch(url, options)
     await response.text()
+
+    const url1 = 'https://projectdatabase1.onrender.com/pvtchat'
+    const response1 = await fetch(url1, options)
+    await response1.text()
+
     const {history} = this.props
     history.push('/processPage')
   }
