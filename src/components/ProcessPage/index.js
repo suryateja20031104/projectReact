@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 
 class ProcessPage extends Component {
-  state = {referenceId: 0}
+  state = {referenceId: 0, stage1: false}
 
   onReference = async () => {
     const options = {
@@ -16,11 +16,17 @@ class ProcessPage extends Component {
     this.setState({
       referenceId: data2.searchResponse,
     })
+
+    const url2 = 'https://projectdatabase1.onrender.com/stage1'
+    const response2 = await fetch(url2, options)
+    const data3 = await response2.text()
+    this.setState({
+      stage1: data3,
+    })
   }
 
   render() {
-    const {referenceId} = this.state
-
+    const {referenceId, stage1} = this.state
     return (
       <div>
         <Header />
@@ -54,10 +60,17 @@ class ProcessPage extends Component {
                 <path d="M2.974 2.342a.5.5 0 1 0-.948.316L3.806 8H1.5A1.5 1.5 0 0 0 0 9.5v2A1.5 1.5 0 0 0 1.5 13H2a.5.5 0 0 0 .5.5h2A.5.5 0 0 0 5 13h6a.5.5 0 0 0 .5.5h2a.5.5 0 0 0 .5-.5h.5a1.5 1.5 0 0 0 1.5-1.5v-2A1.5 1.5 0 0 0 14.5 8h-2.306l1.78-5.342a.5.5 0 1 0-.948-.316L11.14 8H4.86L2.974 2.342ZM14.5 9a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 1 .5-.5h13Z" />
                 <path d="M8.5 5.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z" />
               </svg>
-              <div className="progress one">
-                <p>1</p>
-                <i className="uil uil-check">a</i>
-              </div>
+              {!stage1 && (
+                <div className="progress one">
+                  <p>1</p>
+                </div>
+              )}
+
+              {stage1 && (
+                <div className="progress1 text-center mt-3 mb-3">
+                  <p>.</p>
+                </div>
+              )}
               <p className="text">Network Broadcasting</p>
             </li>
             <li>
