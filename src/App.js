@@ -5,6 +5,7 @@ import Home from './components/Home'
 import NotFound from './components/NotFound'
 import ProcessPage from './components/ProcessPage'
 import NetworkPage from './components/NetworkPage'
+import PrivateChatPage from './components/PrivateChatPage'
 import './App.css'
 
 const App = () => (
@@ -13,6 +14,7 @@ const App = () => (
     <Route exact path="/" component={Home} />
     <Route exact path="/processPage" component={ProcessPage} />
     <Route exact path="/networkPage" component={NetworkPage} />
+    <Route exact path="/privatePage" component={PrivateChatPage} />
     <Route component={NotFound} />
   </Switch>
 )

@@ -12,6 +12,10 @@ class Home extends Component {
     searchproc: 0,
   }
 
+  componentDidMount() {
+    this.onChangePage()
+  }
+
   onChangeInput = event => {
     this.setState({inputtext: event.target.value})
   }
@@ -115,13 +119,7 @@ class Home extends Component {
             <div className="contain2">
               <div>
                 <h1>{searchproc}</h1>
-                <button
-                  className="context"
-                  type="button"
-                  onClick={this.onChangePage}
-                >
-                  search in progress
-                </button>
+                <p className="context">search in progress</p>
               </div>
             </div>
           </div>
@@ -141,13 +139,7 @@ class Home extends Component {
               <div>
                 <h1>{searchcomp}</h1>
                 <p>
-                  <button
-                    type="button"
-                    onClick={this.onChangePage}
-                    className="reference-button"
-                  >
-                    search completed
-                  </button>
+                  <p className="context">search completed</p>
                 </p>
               </div>
             </div>

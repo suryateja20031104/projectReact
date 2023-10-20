@@ -3,7 +3,7 @@ import Header from '../Header'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './index.css'
 
-class NetworkPage extends Component {
+class PrivateChatPage extends Component {
   state = {
     searchPram: '',
     searchVal: '',
@@ -252,4 +252,4 @@ class NetworkPage extends Component {
   }
 }
 
-export default NetworkPage
+export default PrivateChatPage

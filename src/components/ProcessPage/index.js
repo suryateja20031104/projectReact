@@ -6,6 +6,10 @@ import './index.css'
 class ProcessPage extends Component {
   state = {referenceId: 0, stage1: false}
 
+  componentDidMount() {
+    this.onReference()
+  }
+
   onReference = async () => {
     const options = {
       method: 'GET',
@@ -33,13 +37,7 @@ class ProcessPage extends Component {
         <p className="head_1 text-center mt-5">Searching...</p>
         <p className="text-ref text-center">
           Reference:
-          <button
-            onClick={this.onReference}
-            type="button"
-            className="reference-button"
-          >
-            {referenceId}
-          </button>
+          {referenceId}
         </p>
         <div className="main">
           <p className="head_2">
