@@ -64,14 +64,13 @@ class NetworkPage extends Component {
     const {searchPram, searchVal, bot1Resp, bot2Resp, bot3Resp} = this.state
     console.log(searchPram, searchVal, bot1Resp)
     const url4 =
-      'https://projectdatabase1.onrender.com/storePvtchat/?chatlog=' +
+      'https://projectdatabase1.onrender.com/storeNwtchat/?chatlog=' +
       `${searchPram}` +
       `${searchVal}` +
       `${bot1Resp}` +
       `${bot2Resp}` +
       `${bot3Resp}`
-    const response4 = await fetch(url4, options)
-    await response4.json()
+    await fetch(url4, options)
   }
 
   render() {
