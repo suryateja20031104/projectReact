@@ -21,6 +21,9 @@ class ProcessPage extends Component {
       referenceId: data2.searchResponse,
     })
 
+    const url3 = 'https://projectdatabase1.onrender.com/privatebroadcast'
+    await fetch(url3, options)
+
     const url2 = 'https://projectdatabase1.onrender.com/stage1'
     const response2 = await fetch(url2, options)
     const data3 = await response2.text()

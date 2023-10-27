@@ -66,10 +66,10 @@ class NetworkPage extends Component {
     const url4 =
       'https://projectdatabase1.onrender.com/storeNwtchat/?chatlog=' +
       `${searchPram}` +
-      `${searchVal}` +
-      `${bot1Resp}` +
-      `${bot2Resp}` +
-      `${bot3Resp}`
+      ` ${searchVal}` +
+      ` ${bot1Resp}` +
+      ` ${bot2Resp}` +
+      ` ${bot3Resp}`
     await fetch(url4, options)
   }
 

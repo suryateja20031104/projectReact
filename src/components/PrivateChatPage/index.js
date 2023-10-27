@@ -7,9 +7,15 @@ class PrivateChatPage extends Component {
   state = {
     searchPram: '',
     searchVal: '',
+    dOB: '',
+    address1State: '',
+    address1Country: '',
     bot1Resp: '',
     bot2Resp: '',
     bot3Resp: '',
+    bot1Out1: false,
+    bot2Out2: false,
+    bot3Out3: false,
   }
 
   componentDidMount() {
@@ -29,51 +35,63 @@ class PrivateChatPage extends Component {
       searchVal: data.searchValue,
     })
 
-    const url1 = 'https://projectdatabase1.onrender.com/bot1'
+    const url1 = 'https://projectdatabase1.onrender.com/getChatLog'
     const response1 = await fetch(url1, options)
     const data1 = await response1.json()
-    if (data1.length === 0) {
-      this.setState({bot1Resp: 'No'})
-    } else {
-      this.setState({bot1Resp: 'Yes'})
+    this.setState({
+      bot1Resp: data1.bot1,
+      bot2Resp: data1.bot2,
+      bot3Resp: data1.bot3,
+    })
+    const {bot1Resp, bot2Resp} = this.state
+    if (bot1Resp === 'Yes' && bot2Resp === 'Yes') {
+      const url2 = 'https://projectdatabase1.onrender.com/botVerify12'
+      const response2 = await fetch(url2, options)
+      const data2 = await response2.json()
+      this.setState({
+        dOB: data2.DOB,
+        address1State: data2.Address1_State,
+        address1Country: data2.Address1_Country,
+        bot1Out1: data2.dob,
+        bot2Out2: data2.addState,
+        bot3Out3: data2.addCount,
+      })
     }
 
-    const url2 = 'https://projectdatabase1.onrender.com/bot2'
-    const response2 = await fetch(url2, options)
-    const data2 = await response2.json()
-    console.log(data2)
-    if (data2.length === 0) {
-      this.setState({bot2Resp: 'No'})
-    } else {
-      this.setState({bot2Resp: 'Yes'})
-    }
-
-    const url3 = 'https://projectdatabase1.onrender.com/bot3'
-    const response3 = await fetch(url3, options)
-    const data3 = await response3.json()
-    console.log(data3)
-    if (data3.length === 0) {
-      this.setState({bot3Resp: 'No'})
-    } else {
-      this.setState({bot3Resp: 'Yes'})
-    }
-
-    const {searchPram, searchVal, bot1Resp, bot2Resp, bot3Resp} = this.state
+    const {
+      searchPram,
+      searchVal,
+      dOB,
+      address1Country,
+      address1State,
+      bot1Out1,
+      bot2Out2,
+      bot3Out3,
+    } = this.state
     console.log(searchPram, searchVal, bot1Resp)
     const url4 =
-      'https://projectdatabase1.onrender.com/storeNwtchat/?chatlog=' +
-      `${searchPram}` +
+      'https://projectdatabase1.onrender.com/storePvtchat/?chatlog=' +
       `${searchVal}` +
-      `${bot1Resp}` +
-      `${bot2Resp}` +
-      `${bot3Resp}`
+      ` ${dOB} ${bot1Out1 ? 'Yes' : 'No'}` +
+      ` ${address1State} ${bot2Out2 ? 'Yes' : 'No'}` +
+      ` ${address1Country} ${bot3Out3 ? 'Yes' : 'No'}`
     const response4 = await fetch(url4, options)
     await response4.json()
   }
 
   render() {
-    const {searchPram, searchVal, bot1Resp, bot2Resp, bot3Resp} = this.state
-
+    const {
+      searchPram,
+      searchVal,
+      bot1Out1,
+      bot2Out2,
+      bot3Out3,
+      bot3Resp,
+      dOB,
+      address1Country,
+      address1State,
+    } = this.state
+    console.log(bot3Resp)
     return (
       <div>
         <Header />
@@ -81,7 +99,7 @@ class PrivateChatPage extends Component {
           <div className="container shadow-lg">
             <div className="inner-container">
               <p>status:completed</p>
-              <h1 className="">Network Broadcast</h1>
+              <h1 className="">Private Chat</h1>
 
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -111,14 +129,14 @@ class PrivateChatPage extends Component {
                   </svg>
                   <div className="bot">
                     <p>
-                      {searchPram} | {searchVal} | Yes/No ?
+                      {searchVal} | {dOB} | Yes/No ?
                     </p>
                   </div>
                 </div>
                 <div className="chatinner">
                   <div className="bot2">
                     <p>
-                      {searchPram} | {searchVal} | {bot1Resp}
+                      {searchVal} | {dOB} | {bot1Out1 ? 'Yes' : 'No'}
                     </p>
                   </div>
                   <svg
@@ -147,14 +165,14 @@ class PrivateChatPage extends Component {
                   </svg>
                   <div className="bot">
                     <p>
-                      {searchPram} | {searchVal} | Yes/No ?
+                      {searchVal} | {address1State} | Yes/No ?
                     </p>
                   </div>
                 </div>
                 <div className="chatinner">
                   <div className="bot2">
                     <p>
-                      {searchPram} | {searchVal} | {bot2Resp}
+                      {searchVal} | {address1State} | {bot2Out2 ? 'Yes' : 'No'}
                     </p>
                   </div>
                   <svg
@@ -186,14 +204,15 @@ class PrivateChatPage extends Component {
                   </svg>
                   <div className="bot">
                     <p>
-                      {searchPram} | {searchVal} | Yes/No
+                      {searchVal} | {address1Country} | Yes/No
                     </p>
                   </div>
                 </div>
                 <div className="chatinner">
                   <div className="bot2">
                     <p>
-                      {searchPram} | {searchVal} | {bot3Resp}
+                      {searchVal} | {address1Country} |{' '}
+                      {bot3Out3 ? 'Yes' : 'No'}
                     </p>
                   </div>
                   <svg
