@@ -1,0 +1,94 @@
+.container {
+  border-color: black;
+  border-width: 3px;
+  border-style: solid;
+  background-color: lightblue;
+  height: 625px;
+}
+.inner-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.chatcontainer {
+  background-color: lightblue;
+  display: flex;
+  text-align: center;
+  justify-content: space-around;
+}
+.chatbox {
+  background-color: white;
+  width: 35%;
+  margin: 10px;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+}
+.chatid {
+  background-color: lightpink;
+  height: 50px;
+  text-align: center;
+  padding-top: 15px;
+}
+.chatinner {
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.bot {
+  width: 85%;
+  height: 45px;
+  border-radius: 5px;
+  border-bottom-left-radius: 0px;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+}
+.bot2 {
+  width: 85%;
+  height: 45px;
+  border-radius: 5px;
+  border-bottom-right-radius: 0px;
+  border-color: black;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.a {
+  background-color: lightblue;
+  height: 100vh;
+}
+.b {
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  background-color: lightgreen;
+  height: 70vh;
+  width: 65vh;
+  margin: 15px;
+  text-align: center;
+}
+.c {
+  color: black;
+  border-width: 5px;
+}
+.d {
+  height: 155px;
+  width: 250px;
+}
+.e {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.f {
+  height: 90px;
+  width: 90px;
+}
+
+.heading {
+  font-size: 25px;
+  font-weight: bold;
+}

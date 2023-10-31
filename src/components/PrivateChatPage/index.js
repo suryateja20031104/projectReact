@@ -43,8 +43,18 @@ class PrivateChatPage extends Component {
       bot2Resp: data1.bot2,
       bot3Resp: data1.bot3,
     })
-    const {bot1Resp, bot2Resp} = this.state
-    if (bot1Resp === 'Yes' && bot2Resp === 'Yes') {
+    const {bot1Resp, bot2Resp, bot3Resp} = this.state
+    console.log(bot1Resp, bot2Resp, bot3Resp)
+    if (bot1Resp === 'No' && bot2Resp === 'No' && bot3Resp === 'No') {
+      this.setState({
+        dOB: 'null',
+        address1State: 'null',
+        address1Country: 'null',
+        bot1Out1: false,
+        bot2Out2: false,
+        bot3Out3: false,
+      })
+    } else if (bot1Resp === 'Yes' && bot2Resp === 'Yes' && bot3Resp === 'No') {
       const url2 = 'https://projectdatabase1.onrender.com/botVerify12'
       const response2 = await fetch(url2, options)
       const data2 = await response2.json()
@@ -55,6 +65,33 @@ class PrivateChatPage extends Component {
         bot1Out1: data2.dob,
         bot2Out2: data2.addState,
         bot3Out3: data2.addCount,
+      })
+    } else if (bot1Resp === 'Yes' && bot3Resp === 'Yes' && bot2Resp === 'No') {
+      const url3 = 'https://projectdatabase1.onrender.com/botVerify13'
+      const response3 = await fetch(url3, options)
+      const data3 = await response3.json()
+      this.setState({
+        dOB: data3.DOB,
+        address1State: data3.Address1_State,
+        address1Country: data3.Address1_Country,
+        bot1Out1: data3.dob,
+        bot2Out2: data3.addState,
+        bot3Out3: data3.addCount,
+      })
+    } else if (
+      (bot2Resp === 'Yes' && bot3Resp === 'Yes' && bot1Resp === 'No') ||
+      (bot2Resp === 'Yes' && bot3Resp === 'Yes' && bot1Resp === 'Yes')
+    ) {
+      const url4 = 'https://projectdatabase1.onrender.com/botVerify23'
+      const response4 = await fetch(url4, options)
+      const data4 = await response4.json()
+      this.setState({
+        dOB: data4.DOB,
+        address1State: data4.Address1_State,
+        address1Country: data4.Address1_Country,
+        bot1Out1: data4.dob,
+        bot2Out2: data4.addState,
+        bot3Out3: data4.addCount,
       })
     }
 
@@ -68,7 +105,7 @@ class PrivateChatPage extends Component {
       bot2Out2,
       bot3Out3,
     } = this.state
-    console.log(searchPram, searchVal, bot1Resp)
+    console.log(searchPram, searchVal, bot1Resp, bot3Resp)
     const url4 =
       'https://projectdatabase1.onrender.com/storePvtchat/?chatlog=' +
       `${searchVal}` +
@@ -86,12 +123,10 @@ class PrivateChatPage extends Component {
       bot1Out1,
       bot2Out2,
       bot3Out3,
-      bot3Resp,
       dOB,
       address1Country,
       address1State,
     } = this.state
-    console.log(bot3Resp)
     return (
       <div>
         <Header />

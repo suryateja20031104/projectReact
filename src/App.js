@@ -6,6 +6,7 @@ import NotFound from './components/NotFound'
 import ProcessPage from './components/ProcessPage'
 import NetworkPage from './components/NetworkPage'
 import PrivateChatPage from './components/PrivateChatPage'
+import KycPage from './components/KycScoreCard'
 import './App.css'
 
 const App = () => (
@@ -15,6 +16,7 @@ const App = () => (
     <Route exact path="/processPage" component={ProcessPage} />
     <Route exact path="/networkPage" component={NetworkPage} />
     <Route exact path="/privatePage" component={PrivateChatPage} />
+    <Route exact path="/kycPage" component={KycPage} />
     <Route component={NotFound} />
   </Switch>
 )
