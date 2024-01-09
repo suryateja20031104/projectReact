@@ -118,7 +118,7 @@ class Home extends Component {
             </svg>
             <div className="contain2">
               <div>
-                <h1>{searchproc}</h1>
+                <h1 className="headContext">{searchproc}</h1>
                 <p className="context">search in progress</p>
               </div>
             </div>
@@ -137,7 +137,7 @@ class Home extends Component {
             </svg>
             <div className="contain2">
               <div>
-                <h1>{searchcomp}</h1>
+                <h1 className="headContext">{searchcomp}</h1>
                 <p>
                   <p className="context">search completed</p>
                 </p>

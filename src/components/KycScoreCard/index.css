@@ -60,16 +60,31 @@
   background-color: lightblue;
   height: 100vh;
 }
-.b {
-  border-width: 1px;
-  border-color: black;
-  border-style: solid;
-  background-color: lightgreen;
-  height: 70vh;
-  width: 65vh;
-  margin: 15px;
-  text-align: center;
+@media only screen and (min-width: 80em) {
+  .b {
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    background-color: lightgreen;
+    height: 69vh;
+    width: 60vh;
+    margin: 15px;
+    text-align: center;
+  }
 }
+@media only screen and (max-width: 64em) {
+  .b {
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    background-color: lightgreen;
+    height: 65vh;
+    width: 60vh;
+    margin: 15px;
+    text-align: center;
+  }
+}
+
 .c {
   color: black;
   border-width: 5px;

@@ -5,6 +5,15 @@
   background-color: lightblue;
   height: 550px;
 }
+@media only screen and (max-width: 767px) {
+  .container {
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+    background-color: lightblue;
+    height: 1550px;
+  }
+}
 .inner-container {
   display: flex;
   flex-direction: row;
@@ -17,6 +26,16 @@
   text-align: center;
   justify-content: space-around;
 }
+
+@media only screen and (max-width: 40em) {
+  .chatcontainer {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+  }
+}
 .chatbox {
   background-color: white;
   width: 35%;
@@ -25,6 +44,32 @@
   border-width: 2px;
   border-style: solid;
 }
+@media only screen and (max-width: 767px) {
+  .chatinner {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 43vh;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .back {
+    height: 25px;
+  }
+  .heading1 {
+    padding-top: 15px;
+    font-size: 21px;
+  }
+  .heading2 {
+    padding-top: 18px;
+    font-size: 10px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .boxing {
+    width: 75px;
+  }
+}
+
 .chatid {
   background-color: lightpink;
   height: 50px;
