@@ -10,15 +10,17 @@
   flex-direction: row;
   justify-content: space-between;
 } */
-.container {
+.container1 {
   border-color: black;
   border-width: 3px;
   border-style: solid;
   background-color: lightblue;
   height: 650px;
+  padding-top: 100px;
+  padding-left: 500px;
 }
 @media only screen and (max-width: 767px) {
-  .container {
+  .container1 {
     border-color: black;
     border-width: 3px;
     border-style: solid;
@@ -44,9 +46,9 @@
   flex-direction: row;
   justify-content: space-between;
 }
-.table-container {
+.table-container1 {
   width: 400px;
-  height: 490px;
+  height: 400px;
   text-align: center;
   margin-right: 45px;
   margin-top: 45px;

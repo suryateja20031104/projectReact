@@ -8,6 +8,7 @@ import NetworkPage from './components/NetworkPage'
 import PrivateChatPage from './components/PrivateChatPage'
 import KycPage from './components/KycScoreCard'
 import TransactionPage from './components/TransactionPage'
+import UserBlock from './components/UserDetailsBlock'
 import './App.css'
 
 const App = () => (
@@ -19,6 +20,7 @@ const App = () => (
     <Route exact path="/privatePage" component={PrivateChatPage} />
     <Route exact path="/transactionpage" component={TransactionPage} />
     <Route exact path="/kycPage" component={KycPage} />
+    <Route exact path="/userPage" component={UserBlock} />
     <Route component={NotFound} />
   </Switch>
 )

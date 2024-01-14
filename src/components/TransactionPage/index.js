@@ -19,15 +19,28 @@ class TransactionPage extends Component {
     const options = {
       method: 'GET',
     }
-    const url = `http://13.201.76.177:6002/api/querypropertybyid/${4}`
+
+    const url11 = 'https://projectdatabase1.onrender.com/blockchainpart'
+    const response11 = await fetch(url11, options)
+    const data11 = await response11.json()
+
+    const url = `http://localhost:8085/api/querypropertybyid/${data11.iD}`
     const response = await fetch(url, options)
     const data = await response.json()
+    console.log(data)
     this.setState({
       transactionId: data.TransactionID,
       owner: data.Owner,
       blockno: data.ID,
       timestamp: data.Timestamp,
     })
+
+    const {transactionId} = this.state
+    const url2 =
+      'https://projectdatabase1.onrender.com/storeTD?translog=' +
+      `${transactionId}`
+    const response1 = await fetch(url2, options)
+    await response1.text()
   }
 
   render() {
@@ -39,15 +52,15 @@ class TransactionPage extends Component {
         <div className="mt-5">
           <div className="container shadow-lg">
             <div className="inner-container">
-              <p>status:completed</p>
-              <h1 className="">BlockChain Transactions</h1>
+              <p className="heading2">status:completed</p>
+              <h1 className="heading1">BlockChain Transactions</h1>
 
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="50"
                 height="50"
                 fill="currentColor"
-                className="bi bi-backspace-fill m-3"
+                className="bi bi-backspace-fill m-3 back"
                 viewBox="0 0 16 16"
               >
                 <path d="M15.683 3a2 2 0 0 0-2-2h-7.08a2 2 0 0 0-1.519.698L.241 7.35a1 1 0 0 0 0 1.302l4.843 5.65A2 2 0 0 0 6.603 15h7.08a2 2 0 0 0 2-2V3zM5.829 5.854a.5.5 0 1 1 .707-.708l2.147 2.147 2.146-2.147a.5.5 0 1 1 .707.708L9.39 8l2.146 2.146a.5.5 0 0 1-.707.708L8.683 8.707l-2.147 2.147a.5.5 0 0 1-.707-.708L7.976 8 5.829 5.854z" />

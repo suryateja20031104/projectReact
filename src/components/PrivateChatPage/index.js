@@ -113,7 +113,7 @@ class PrivateChatPage extends Component {
       ` ${address1State} ${bot2Out2 ? 'Yes' : 'No'}` +
       ` ${address1Country} ${bot3Out3 ? 'Yes' : 'No'}`
     const response4 = await fetch(url4, options)
-    await response4.json()
+    await response4.text()
   }
 
   render() {

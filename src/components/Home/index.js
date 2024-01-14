@@ -54,6 +54,16 @@ class Home extends Component {
     const response1 = await fetch(url1, options)
     await response1.text()
 
+    const url3 = 'https://projectdatabase1.onrender.com/privatebroadcast'
+    await fetch(url3, options)
+
+    const url5 = 'https://projectdatabase1.onrender.com/kycdetails'
+    const response5 = await fetch(url5, options)
+    await response5.text()
+
+    const url6 = 'https://projectdatabase1.onrender.com/transactiondetails'
+    await fetch(url6, options)
+
     const {history} = this.props
     history.push('/processPage')
   }
