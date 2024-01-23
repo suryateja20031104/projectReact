@@ -18,7 +18,7 @@ class KycPage extends Component {
     const options = {
       method: 'GET',
     }
-    const url = 'https://projectdatabase1.onrender.com/kycScore'
+    const url = 'http://13.201.47.144:3000/kycScore'
     const response = await fetch(url, options)
     const data = await response.json()
     this.setState({
@@ -30,14 +30,14 @@ class KycPage extends Component {
     const {dobScore, stateScore, countryScore} = this.state
 
     const url2 =
-      'https://projectdatabase1.onrender.com/storeKYC/?kyclog=' +
+      'http://13.201.47.144:3000/storeKYC/?kyclog=' +
       `${dobScore}` +
       ` ${stateScore}` +
       ` ${countryScore}`
     const response2 = await fetch(url2, options)
     await response2.text()
 
-    const url11 = 'https://projectdatabase1.onrender.com/blockchainpart'
+    const url11 = 'http://13.201.47.144:3000/blockchainpart'
     const response11 = await fetch(url11, options)
     const data11 = await response11.json()
     console.log(data11)
@@ -47,7 +47,7 @@ class KycPage extends Component {
       Message: data11.chatData,
       Owner: data11.owner,
     }
-    const url12 = 'http://localhost:8085/api/addproperty/'
+    const url12 = 'http://3.110.114.0:6002/api/addproperty/'
     const options1 = {
       method: 'POST',
       headers: {

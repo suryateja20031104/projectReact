@@ -29,7 +29,7 @@ class ProcessPage extends Component {
     const options = {
       method: 'GET',
     }
-    const url1 = 'https://projectdatabase1.onrender.com/getCountSearch'
+    const url1 = 'http://13.201.47.144:3000/getCountSearch'
     const response1 = await fetch(url1, options)
     const data2 = await response1.json()
     this.setState({
@@ -38,32 +38,32 @@ class ProcessPage extends Component {
 
     await this.sleep(1000 * 5)
 
-    const url2 = 'https://projectdatabase1.onrender.com/stage1'
+    const url2 = 'http://13.201.47.144:3000/stage1'
     const response2 = await fetch(url2, options)
     const data3 = await response2.text()
     this.setState({
       stage1: data3,
     })
 
-    await this.sleep(1000 * 5)
+    await this.sleep(1000 * 3)
 
     this.setState({
       stage2: data3,
     })
 
-    await this.sleep(1000 * 5)
+    await this.sleep(1000 * 3)
 
     this.setState({
       stage3: data3,
     })
 
-    await this.sleep(1000 * 5)
+    await this.sleep(1000 * 3)
 
     this.setState({
       stage4: data3,
     })
 
-    await this.sleep(1000 * 5)
+    await this.sleep(1000 * 3)
 
     this.setState({
       stage5: data3,

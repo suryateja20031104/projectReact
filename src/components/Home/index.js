@@ -28,7 +28,7 @@ class Home extends Component {
     const options = {
       method: 'GET',
     }
-    const url1 = 'https://projectdatabase1.onrender.com/getCountSearch'
+    const url1 = 'http://13.201.47.144:3000/getCountSearch'
     const response1 = await fetch(url1, options)
     const data2 = await response1.json()
     this.setState({
@@ -40,7 +40,7 @@ class Home extends Component {
   onChangeButton = async () => {
     const {inputtext, selectext} = this.state
     const url =
-      'https://projectdatabase1.onrender.com/searchquery/?inputtext=' +
+      'http://13.201.47.144:3000/searchquery/?inputtext=' +
       `${inputtext}` +
       '&selectext=' +
       `${selectext}`
@@ -50,18 +50,18 @@ class Home extends Component {
     const response = await fetch(url, options)
     await response.text()
 
-    const url1 = 'https://projectdatabase1.onrender.com/networkbroadcast'
+    const url1 = 'http://13.201.47.144:3000/networkbroadcast'
     const response1 = await fetch(url1, options)
     await response1.text()
 
-    const url3 = 'https://projectdatabase1.onrender.com/privatebroadcast'
+    const url3 = 'http://13.201.47.144:3000/privatebroadcast'
     await fetch(url3, options)
 
-    const url5 = 'https://projectdatabase1.onrender.com/kycdetails'
+    const url5 = 'http://13.201.47.144:3000/kycdetails'
     const response5 = await fetch(url5, options)
     await response5.text()
 
-    const url6 = 'https://projectdatabase1.onrender.com/transactiondetails'
+    const url6 = 'http://13.201.47.144:3000/transactiondetails'
     await fetch(url6, options)
 
     const {history} = this.props

@@ -20,11 +20,11 @@ class TransactionPage extends Component {
       method: 'GET',
     }
 
-    const url11 = 'https://projectdatabase1.onrender.com/blockchainpart'
+    const url11 = 'http://13.201.47.144:3000/blockchainpart'
     const response11 = await fetch(url11, options)
     const data11 = await response11.json()
 
-    const url = `http://localhost:8085/api/querypropertybyid/${data11.iD}`
+    const url = `http://3.110.114.0:6002/api/querypropertybyid/${data11.iD}`
     const response = await fetch(url, options)
     const data = await response.json()
     console.log(data)
@@ -36,9 +36,7 @@ class TransactionPage extends Component {
     })
 
     const {transactionId} = this.state
-    const url2 =
-      'https://projectdatabase1.onrender.com/storeTD?translog=' +
-      `${transactionId}`
+    const url2 = `http://13.201.47.144:3000/storeTD?translog=${transactionId}`
     const response1 = await fetch(url2, options)
     await response1.text()
   }

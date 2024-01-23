@@ -61,7 +61,7 @@ class LoginForm extends Component {
     event.preventDefault()
     const {username1, password1} = this.state
     const userDetails = {username1, password1}
-    const url = 'https://projectdatabase1.onrender.com/users'
+    const url = 'http://13.201.47.144:3000/users'
     const options = {
       method: 'POST',
       headers: {
@@ -82,7 +82,7 @@ class LoginForm extends Component {
     event.preventDefault()
     const {username, password} = this.state
     const url =
-      'https://projectdatabase1.onrender.com/userConformation/?username=' +
+      'http://13.201.47.144:3000/userConformation/?username=' +
       `${username}` +
       '&password=' +
       `${password}`

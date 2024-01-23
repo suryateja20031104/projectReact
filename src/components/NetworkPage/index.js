@@ -23,7 +23,7 @@ class NetworkPage extends Component {
     const options = {
       method: 'GET',
     }
-    const url = 'https://projectdatabase1.onrender.com/getDet'
+    const url = 'http://13.201.47.144:3000/getDet'
     const response = await fetch(url, options)
     const data = await response.json()
     console.log(data)
@@ -32,7 +32,7 @@ class NetworkPage extends Component {
       searchVal: data.searchValue,
     })
 
-    const url1 = 'https://projectdatabase1.onrender.com/bot1'
+    const url1 = 'http://13.201.47.144:3000/bot1'
     const response1 = await fetch(url1, options)
     const data1 = await response1.json()
     if (data1.length === 0) {
@@ -41,7 +41,7 @@ class NetworkPage extends Component {
       this.setState({bot1Resp: 'Yes'})
     }
 
-    const url2 = 'https://projectdatabase1.onrender.com/bot2'
+    const url2 = 'http://13.201.47.144:3000/bot2'
     const response2 = await fetch(url2, options)
     const data2 = await response2.json()
     console.log(data2)
@@ -51,7 +51,7 @@ class NetworkPage extends Component {
       this.setState({bot2Resp: 'Yes'})
     }
 
-    const url3 = 'https://projectdatabase1.onrender.com/bot3'
+    const url3 = 'http://13.201.47.144:3000/bot3'
     const response3 = await fetch(url3, options)
     const data3 = await response3.json()
     console.log(data3)
@@ -64,7 +64,7 @@ class NetworkPage extends Component {
     const {searchPram, searchVal, bot1Resp, bot2Resp, bot3Resp} = this.state
     console.log(searchPram, searchVal, bot1Resp)
     const url4 =
-      'https://projectdatabase1.onrender.com/storeNwtchat/?chatlog=' +
+      'http://13.201.47.144:3000/storeNwtchat/?chatlog=' +
       `${searchPram}` +
       ` ${searchVal}` +
       ` ${bot1Resp}` +

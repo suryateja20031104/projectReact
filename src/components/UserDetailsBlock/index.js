@@ -20,7 +20,11 @@ class UserBlock extends Component {
       method: 'GET',
     }
 
-    const url13 = 'https://projectdatabase1.onrender.com/blockchainpart'
+    const url14 = 'http://13.201.47.144:3000/finalUpdate'
+    const resp = await fetch(url14, options)
+    await resp.text()
+
+    const url13 = 'http://13.201.47.144:3000/blockchainpart'
     const response11 = await fetch(url13, options)
     const data11 = await response11.json()
     console.log(data11)
@@ -29,7 +33,7 @@ class UserBlock extends Component {
       ID: data11.iD,
       Owner: data11.owner,
     }
-    const url12 = 'http://localhost:8085/api/addproperty1/'
+    const url12 = 'http://3.110.114.0:6002/api/addproperty1/'
     const options1 = {
       method: 'POST',
       headers: {
@@ -41,7 +45,7 @@ class UserBlock extends Component {
     const data1 = await response1.text()
     console.log(data1)
 
-    const url11 = `http://localhost:8085/api/queryproperty1byid/${data11.iD}`
+    const url11 = `http://3.110.114.0:6002/api/queryproperty1byid/${data11.iD}`
     const response12 = await fetch(url11, options)
     const data12 = await response12.json()
 

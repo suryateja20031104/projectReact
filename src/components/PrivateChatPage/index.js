@@ -26,7 +26,7 @@ class PrivateChatPage extends Component {
     const options = {
       method: 'GET',
     }
-    const url = 'https://projectdatabase1.onrender.com/getDet'
+    const url = 'http://13.201.47.144:3000/getDet'
     const response = await fetch(url, options)
     const data = await response.json()
     console.log(data)
@@ -35,7 +35,7 @@ class PrivateChatPage extends Component {
       searchVal: data.searchValue,
     })
 
-    const url1 = 'https://projectdatabase1.onrender.com/getChatLog'
+    const url1 = 'http://13.201.47.144:3000/getChatLog'
     const response1 = await fetch(url1, options)
     const data1 = await response1.json()
     this.setState({
@@ -55,7 +55,7 @@ class PrivateChatPage extends Component {
         bot3Out3: false,
       })
     } else if (bot1Resp === 'Yes' && bot2Resp === 'Yes' && bot3Resp === 'No') {
-      const url2 = 'https://projectdatabase1.onrender.com/botVerify12'
+      const url2 = 'http://13.201.47.144:3000/botVerify12'
       const response2 = await fetch(url2, options)
       const data2 = await response2.json()
       this.setState({
@@ -67,7 +67,7 @@ class PrivateChatPage extends Component {
         bot3Out3: data2.addCount,
       })
     } else if (bot1Resp === 'Yes' && bot3Resp === 'Yes' && bot2Resp === 'No') {
-      const url3 = 'https://projectdatabase1.onrender.com/botVerify13'
+      const url3 = 'http://13.201.47.144:3000/botVerify13'
       const response3 = await fetch(url3, options)
       const data3 = await response3.json()
       this.setState({
@@ -82,7 +82,7 @@ class PrivateChatPage extends Component {
       (bot2Resp === 'Yes' && bot3Resp === 'Yes' && bot1Resp === 'No') ||
       (bot2Resp === 'Yes' && bot3Resp === 'Yes' && bot1Resp === 'Yes')
     ) {
-      const url4 = 'https://projectdatabase1.onrender.com/botVerify23'
+      const url4 = 'http://13.201.47.144:3000/botVerify23'
       const response4 = await fetch(url4, options)
       const data4 = await response4.json()
       this.setState({
@@ -107,7 +107,7 @@ class PrivateChatPage extends Component {
     } = this.state
     console.log(searchPram, searchVal, bot1Resp, bot3Resp)
     const url4 =
-      'https://projectdatabase1.onrender.com/storePvtchat/?chatlog=' +
+      'http://13.201.47.144:3000/storePvtchat/?chatlog=' +
       `${searchVal}` +
       ` ${dOB} ${bot1Out1 ? 'Yes' : 'No'}` +
       ` ${address1State} ${bot2Out2 ? 'Yes' : 'No'}` +
